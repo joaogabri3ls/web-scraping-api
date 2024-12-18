@@ -55,14 +55,3 @@ def scrape_espn_news(url: str):
     df = pd.DataFrame(news)
     print("Dados organizados com sucesso.")
     return df
-
-if __name__ == "__main__":
-    url = "https://www.espn.com.br/futebol/"
-    df = scrape_espn_news(url)
-
-    if not df.empty:
-        print(df.head())  # Exibe as primeiras linhas para validação
-        df.to_csv("espn_news.csv", index=False)  # Salva os dados em CSV
-        print("Dados salvos em 'espn_news.csv'.")
-    else:
-        print("Nenhum dado foi extraído.")
